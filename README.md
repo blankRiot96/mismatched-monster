@@ -1,12 +1,12 @@
 <div align="center">
-    <h1>Mismatched Monster</h1>
+    <h1>👹 Mismatched Monster 👹</h1>
     <p1>A game made for the Narrative Driven Jam<p1>  
 </div>
 <br>
 <br>
 
 <div align="center">
-<h2>Plot</h2>
+<h2>📝 Plot 📝</h2>
 Domas was once a powerful orc warrior, feared by all who knew him. But one fateful day, while exploring a cave deep in the mountains, he was attacked by a powerful demon who stole his limbs and left him helpless and trapped in the cave.
 
 For years, Domas lay there, unable to move, unable to fight back. He watched as his once-great body withered away, his muscles atrophying and his spirit broken. But he never gave up hope. He knew that one day, he would find a way to get his limbs back and take revenge on the demon who had taken them from him.
