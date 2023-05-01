@@ -20,7 +20,8 @@ class Core:
         self.screen = pygame.display.set_mode(Shared.SRECT.size, pygame.SCALED)
         self.shared.screen = self.screen
         self.clock = pygame.time.Clock()
-        pygame.display.set_caption("Title")
+        pygame.display.set_caption("Mismatched Monster")
+        pygame.display.set_icon(pygame.image.load("assets/body.png"))
 
     def update(self):
         self.shared.events = pygame.event.get()

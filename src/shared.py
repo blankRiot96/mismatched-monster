@@ -7,7 +7,7 @@ class Shared:
     _inst = None
 
     # Constants
-    SCREEN_WIDTH, SCREEN_HEIGHT = (550, 300)
+    SCREEN_WIDTH, SCREEN_HEIGHT = (1100, 600)
     SRECT = pygame.Rect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)
     screen: pygame.Surface
 
