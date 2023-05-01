@@ -18,9 +18,14 @@ class TileMap:
 
     def gen_tiles(self):
         self.tiles = []
-        for layer in self.tilemap.layers:
+        for nth_layer, layer in enumerate(self.tilemap.layers):
+            prev_x, prev_y = -1, -1
             row = []
-            for x, y, _ in layer.tiles():
+            for x, y, image in layer.tiles():
+                if x > prev_x + 1:
+                    row.extend([None] * (x - prev_x))
+                    prev_x, prev_y = x, y
+                    continue
                 row.append(
                     pygame.Rect(
                         x * self.tilesize,
@@ -29,7 +34,35 @@ class TileMap:
                         self.tilesize,
                     )
                 )
-            self.tiles.append(row)
+                if y > prev_y:
+                    self.tiles.append(row)
+                    row = []
+                prev_x, prev_y = x, y
+
+            for row in self.tiles:
+                print(len(row))
+                # for tile in row:
+                # if tile is None:
+                # print(0, end="")
+                # else:
+                # print(1, end="")
+                # print()
+            # row = []
+            # for x in range(self.tilemap.width):
+            #     for y in range(self.tilemap.height):
+            #         tile = self.tilemap.get_tile_properties(x, y, nth_layer)
+            #         if tile is None:
+            #             row.append(None)
+            #             continue
+
+            #         rect = pygame.Rect(
+            #             x * self.tilesize,
+            #             y * self.tilesize,
+            #             self.tilesize,
+            #             self.tilesize,
+            #         )
+            #         row.append(rect)
+            # self.tiles.append(row)
 
     def gen_surf(self):
         self.surface = pygame.Surface(
@@ -53,7 +86,6 @@ class TileMap:
     def get_neighbouring_tiles(self) -> t.Iterator:
         for x in range(-self.COLLISION_DEPTH, self.COLLISION_DEPTH + 1):
             for y in range(-self.COLLISION_DEPTH, self.COLLISION_DEPTH + 1):
-                print((x, y))
                 tile = self.get_tile(x, y)
                 if tile is None:
                     continue

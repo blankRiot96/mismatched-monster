@@ -15,7 +15,7 @@ class Player:
         self.gen_grid_pos()
 
     def gen_grid_pos(self):
-        self.grid_pos = (int(self.pos.x / 32), int(self.pos.y / 32))
+        self.grid_pos = (int(self.pos.y / 32), int(self.pos.x / 32))
 
     def on_collision(self, tile: pygame.Rect):
         if self.pos.y > tile.y:
